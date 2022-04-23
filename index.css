@@ -14,7 +14,7 @@ h1{
        cursor: pointer;
        background-color: #a5d6f2;
        float: right;
-      }
-      .btn-group .button:hover {
-       background-color: #80bde0;
-      }
+}
+.btn-group .button:hover {
+  background-color: #80bde0;
+}
