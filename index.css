@@ -1,3 +1,8 @@
+h1{
+  font: Georgia;
+  text-transform: uppercase;
+}
+
 .container {
   position: relative;
   text-align: center;
@@ -6,7 +11,7 @@
 
 .centered {
   position: absolute;
-  top: 40%;
-  left: 30%;
-  transform: translate(-50%, -50%);
+  top: 20px;
+  left: 30px;
 }
+
