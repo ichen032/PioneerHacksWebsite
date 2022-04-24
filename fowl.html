@@ -71,5 +71,18 @@
           <p>corn, grains, vegetables, and insects</p>
         </div>
     </div>
+    <script>
+      document.querySelectorAll('food__button').forEach(button => {
+        button.addEventListener('click', () => {
+          const foodContent = button.nextElementSibling;
+          button.classList.toggle('accordion__button--active');
+          if(button.classList.contains('food__button--active')){
+            foodContent.style.maxHeight = foodContent.scrollHeight + 'px';
+          }else{
+            foodContent.style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
   </body>
 </html>
