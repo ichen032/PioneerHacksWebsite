@@ -22,7 +22,7 @@
        box-sizing: border-box; 
       }
       .slides{
-        display: none;
+        display: none
       }
       img{
         vertical-align: middle;
@@ -39,7 +39,7 @@
         width: auto;
         padding: 16px;
         margin-top: -22px;
-        color: white;
+        color: black;
         font-weight: bold;
         font-size: 18px;
         transition: 0.6s ease;
@@ -53,7 +53,7 @@
         width: auto;
         padding: 16px;
         margin-top: -22px;
-        color: white;
+        color: black;
         font-weight: bold;
         font-size: 18px;
         transition: 0.6s ease;
@@ -62,7 +62,7 @@
         right: 0;
       }
       .prev:hover, .next:hover {
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(200, 200, 200, 0.8);
       }
       .caption{
         color: #F0F8FF
@@ -81,7 +81,7 @@
         background-color: #A9A9A9;
         border-radius: 50%;
         display: inline-block;
-        transition: background-color 0.6 ease;
+        transition: background-color 0.6s ease;
       }
       .current, .bulletpt:hover {
         background-color: #696969;
@@ -179,10 +179,10 @@
          }
          for (let i = 0; i < slides.length; i++){
            slides[i].style.display = "none";
-           bulletpts[i].className = bulletpts[i].className.replace("active", "");
+           bulletpts[i].className = bulletpts[i].className.replace("current", "");
          }
          slides[index].style.display = "block";
-         bulletpts[index].className += "active";
+         bulletpts[index].className += "current";
         }
       </script>
   </body>
