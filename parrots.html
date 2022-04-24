@@ -115,9 +115,56 @@
       <h3>Reasons YOU should get a parrot:</h3>
       <p class = "tab" style = margin-bottom: 50px>- extremely intelligent <br>- easy to train <br>- social <br>- require small living spaces <br>- low maintenance <br>- inexpensive to care for</p>
       <h2>Popular Parrot Breeds</h2>
-      
-      <script>
+      <div class = "container">
+        <div class = "fade slides">
+          <img src = "https://media-be.chewy.com/wp-content/uploads/2019/10/24123447/Cockatiel-Facts-1024x576.jpg" style = "width: 100%">
+          <div class = "caption>
+            Cockatiels
+          </div>
+        </div>
         
+        <div class = "fade slides">
+          <img src = "https://cdn.shopify.com/s/files/1/1057/6184/articles/budgies_1024x1024_2x.jpg?v=1567607864" style = "width: 100%">
+          <div class = "caption>
+            Parakeets
+          </div>
+        </div>
+        
+        <div class = "fade slides">
+          <img src = "https://www.bubblypet.com/wp-content/uploads/2021/09/Cockatoo-lifespan-how-long-do-cockatoos-live.jpg " style = "width: 100%">
+          <div class = "caption>
+            Cockatoos
+          </div>
+        </div>
+        
+        <div class = "fade slides">
+          <img src = "https://images8.alphacoders.com/595/thumb-1920-595503.jpg " style = "width: 100%">
+          <div class = "caption>
+            Macaws
+          </div>
+        </div>
+        <a class = "prev" onclick = "moveSlides(-1)">&#8249</a>
+        <a class = "next" onclick = "moveSlides(1)">&#8250</a>
+      </div>     
+      <br>
+      <div style = "text-align: center">
+        <span class = "dot" onclick = "setSlide(1)"></span>
+        <span class = "dot" onclick = "setSlide(2)"></span>
+        <span class = "dot" onclick = "setSlide(3)"></span>
+        <span class = "dot" onclick = "setSLide(4)"></span>
+      </div>
+      <script>
+        let index = 0;
+        showSlides(index);
+        
+        function moveSlides(n){
+          showSlides(index = n);
+        }
+        
+        function setSlide(n){
+          showSlides(index = n);
+        }
+
       </script>
   </body>
 </html>
