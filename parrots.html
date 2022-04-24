@@ -177,10 +177,10 @@
          }
          for (let i = 0; i < slides.length; i++){
            slides[i].style.display = "none";
-           bulletpts[i].className = bulletpts[i].className.replace("current", "");
+           bulletpts[i].className = bulletpts[i].className.replace(" current", "");
          }
          slides[index].style.display = "block";
-         bulletpts[index].className += "current";
+         bulletpts[index].className += " current";
         }
       </script>
   </body>
