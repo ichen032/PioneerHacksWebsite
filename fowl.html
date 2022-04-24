@@ -30,12 +30,12 @@
         text-align: left;
         transition: background 0.2s;
       }
-/*       .food__button::after {
+      .food__button::after {
         content: '\25be';
         float: right;
         transform: scale(1.5);
       }
-      .food__button + food__content {display: block}
+      .food__button--active + .food__content {display: block}
       .food__button--active {background: #555555}
       .food__button--active::after {content: '\25b4'}
       .food__content {
@@ -44,7 +44,7 @@
         background: #eeeeee;
         display: none;
         overflow: auto;
-      } */
+      }
     </style>
     <link rel="stylesheet" href="index.css">
   </head>
@@ -71,12 +71,12 @@
           <p>corn, grains, vegetables, and insects</p>
         </div>
     </div>
-<!--     <script>
+    <script>
       document.querySelectorAll('.food__button').forEach(button => {
         button.addEventListener('click', () => {
-          button.classList.toggle('accordion__button--active');
+          button.classList.toggle('food__button--active');
         });
       });
-    </script> -->
+    </script>
   </body>
 </html>
