@@ -149,17 +149,17 @@
       </div>     
       <br>
       <div style = "text-align: center">
+        <span class = "bulletpt" onclick = "setSlide(0)"></span>
         <span class = "bulletpt" onclick = "setSlide(1)"></span>
         <span class = "bulletpt" onclick = "setSlide(2)"></span>
-        <span class = "bulletpt" onclick = "setSlide(3)"></span>
-        <span class = "bulletpt" onclick = "setSLide(4)"></span>
+        <span class = "bulletpt" onclick = "setSLide(3)"></span>
       </div>
       <script>
         let index = 0;
         showSlides(index);
         
         function moveSlides(n){
-          showSlides(index = n);
+          showSlides(index += n);
         }
         
         function setSlide(n){
