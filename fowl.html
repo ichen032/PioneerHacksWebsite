@@ -18,6 +18,7 @@
       .btn-group .button:hover {
        background-color: #80bde0;
       }
+/*       food */
       .food__button {
         display: block;
         width: 100%;
@@ -37,6 +38,136 @@
       .food__button--active {background: #555555}
       .food__button--active::after {content: '\25b2'}
       .food__content {
+        padding: 0 15px;
+        font-family: sans-serif;
+        background: #eeeeee;
+        display: none;
+        overflow: auto;
+      }
+/*       life span */
+      .life__button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #333333;
+        color: #ffffff;
+        text-align: left;
+      }
+      .life__button::after {
+        content: '\25bc';
+        float: right;
+      }
+      .life__button--active + .life__content {display: block}
+      .life__button--active {background: #555555}
+      .life__button--active::after {content: '\25b2'}
+      .life__content {
+        padding: 0 15px;
+        font-family: sans-serif;
+        background: #eeeeee;
+        display: none;
+        overflow: auto;
+      }
+/*         approximate costs */
+        .cost__button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #333333;
+        color: #ffffff;
+        text-align: left;
+      }
+      .cost__button::after {
+        content: '\25bc';
+        float: right;
+      }
+      .cost__button--active + .cost__content {display: block}
+      .cost__button--active {background: #555555}
+      .cost__button--active::after {content: '\25b2'}
+      .cost__content {
+        padding: 0 15px;
+        font-family: sans-serif;
+        background: #eeeeee;
+        display: none;
+        overflow: auto;
+      }
+/*         living space */
+        .space__button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #333333;
+        color: #ffffff;
+        text-align: left;
+      }
+      .space__button::after {
+        content: '\25bc';
+        float: right;
+      }
+      .space__button--active + .space__content {display: block}
+      .space__button--active {background: #555555}
+      .space__button--active::after {content: '\25b2'}
+      .space__content {
+        padding: 0 15px;
+        font-family: sans-serif;
+        background: #eeeeee;
+        display: none;
+        overflow: auto;
+      }
+/*         needs */
+        .need_button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #333333;
+        color: #ffffff;
+        text-align: left;
+      }
+      .need_button::after {
+        content: '\25bc';
+        float: right;
+      }
+      .need_button--active + .need__content {display: block}
+      .need_button--active {background: #555555}
+      .need_button--active::after {content: '\25b2'}
+      .need__content {
+        padding: 0 15px;
+        font-family: sans-serif;
+        background: #eeeeee;
+        display: none;
+        overflow: auto;
+      }
+/*         things you should know */
+        .know__button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: #333333;
+        color: #ffffff;
+        text-align: left;
+      }
+      .know__button::after {
+        content: '\25bc';
+        float: right;
+      }
+      .know__button--active + .know__content {display: block}
+      .know__button--active {background: #555555}
+      .know__button--active::after {content: '\25b2'}
+      .know__content {
         padding: 0 15px;
         font-family: sans-serif;
         background: #eeeeee;
@@ -67,10 +198,65 @@
           <p>corn, grains, vegetables, and insects</p>
         </div>
     </div>
+    <div class="life">
+      <button type="button" class="life_button">Life Span</button>
+        <div class="life__content">
+          <p>5-10 years for ducks and chickens<br>10-20 years for geese</br><br>1-2 years for quails</br></p>
+        </div>
+    </div>
+    <div class="cost">
+      <button type="button" class="cost__button">Approximate Costs</button>
+        <div class="cost_content">
+          <p>$200-400</p>
+        </div>
+    </div>
+    <div class="space">
+      <button type="button" class="space__button">Living Space</button>
+        <div class="space__content">
+          <p>outdoor area with at least 10 square feet per bird, complete with a coop for them to rest at night</p>
+        </div>
+    </div>
+    <div class="need">
+      <button type="button" class="need_button">Needs</button>
+        <div class="need__content">
+          <p>- a backyard they can run around in; additionally a pond for the ducks and geese<br>- be aware of raccoons and stray cats that might threaten them</br></p>
+        </div>
+    </div>
+    <div class="know">
+      <button type="button" class="know_button">Things You Should Know</button>
+        <div class="know__content">
+          <p>- these animals are very loud, so be prepared to hear bwak, quack, and honk all day<br>- these animals have wings, meaning that they might fly away at the first sign of danger</br><br>- these animals have chances of spreading diseases that are harmful to humans</br></p>
+        </div>
+    </div>
     <script>
       document.querySelectorAll('.food__button').forEach(button => {
         button.addEventListener('click', () => {
           button.classList.toggle('food__button--active');
+        });
+      });
+      document.querySelectorAll('.life__button').forEach(button => {
+        button.addEventListener('click', () => {
+          button.classList.toggle('life__button--active');
+        });
+      });
+      document.querySelectorAll('.cost_button').forEach(button => {
+        button.addEventListener('click', () => {
+          button.classList.toggle('cost__button--active');
+        });
+      });
+      document.querySelectorAll('.space__button').forEach(button => {
+        button.addEventListener('click', () => {
+          button.classList.toggle('space__button--active');
+        });
+      });
+      document.querySelectorAll('.need__button').forEach(button => {
+        button.addEventListener('click', () => {
+          button.classList.toggle('need__button--active');
+        });
+      });
+      document.querySelectorAll('.know__button').forEach(button => {
+        button.addEventListener('click', () => {
+          button.classList.toggle('know__button--active');
         });
       });
     </script>
