@@ -35,15 +35,15 @@
         float: right;
         transform: scale(1.5);
       }
+      .food__button + food__content {display: block}
       .food__button--active {background: #555555}
       .food__button--active::after {content: '\25b4'}
       .food__content {
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.2s;
         padding: 0 15px;
         font-family: sans-serif;
         background: #eeeeee;
+        display: none;
+        overflow: auto;
       }
     </style>
     <link rel="stylesheet" href="index.css">
@@ -74,13 +74,7 @@
     <script>
       document.querySelectorAll('.food__button').forEach(button => {
         button.addEventListener('click', () => {
-          const foodContent = button.nextElementSibling;
           button.classList.toggle('accordion__button--active');
-          if(button.classList.contains('food__button--active')){
-            foodContent.style.maxHeight = foodContent.scrollHeight + 'px';
-          }else{
-            foodContent.style.maxHeight = 0;
-          }
         });
       });
     </script>
