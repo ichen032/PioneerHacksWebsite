@@ -18,6 +18,85 @@
       .btn-group .button:hover {
        background-color: #80bde0;
       }
+      *{
+       box-sizing: border-box; 
+      }
+      .slides{
+        display: none
+      }
+      img{
+        vertical-align: middle;
+      }
+      .container{
+        max-width: 75%;
+        position: relative;
+        margin: auto;
+      }
+      .prev {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        transform: scale(1.5);
+      }
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 3px 0 0 3px;
+        user-select: none;
+        right: 0;
+        transform: scale(1.5);
+      }
+      .prev:hover, .next:hover {
+        background-color: rgba(200, 200, 200, 0.8);
+      }
+      .caption{
+        color: #FFFFFF ;
+        font-size: 50px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+      .bulletpt{
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #A9A9A9;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      .current, .bulletpt:hover {
+        background-color: #696969;
+      }
+      .fade{
+       animation-name: fade;
+       animation-duration: 2s;
+      }
+      
+      @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+      }
 /*       food */
       .food__button {
         display: block;
@@ -190,8 +269,47 @@
         </form>
        <h1>Fowl<h1>
     </div>
-    <h3>Reasons why YOU should get a fowl:</h3>
+    <h3>Reasons why YOU sho uld get a fowl:</h3>
     <p class="tab">- they lay eggs<br>- their droppings can be used as fertilizer for your garden<br>- they have quirky personalities</p>
+    <h2 style = "text-align: center;" >Popular Fowl Breeds</h2>
+    <div class = "container">
+        <div class = "fade slides">
+          <img src = "https://morningchores.com/wp-content/uploads/2020/02/9-Medicinal-Herbs-for-Chickens-to-Keep-Your-Flock-Healthier-FB.jpg" style = "width: 100%">
+          <div class = "caption">
+            Chickens
+          </div>
+        </div>
+        
+        <div class = "fade slides">
+          <img src = "https://b50ym1n8ryw31pmkr4671ui1c64-wpengine.netdna-ssl.com/wp-content/blogs.dir/11/files/2019/10/Untitled-Goose-Photo-Philippe-Henry-1024x512.jpg" style = "width: 100%">
+          <div class = "caption">
+            Geese
+          </div>
+        </div>
+        
+        <div class = "fade slides">
+          <img src = "https://a-z-animals.com/media/2021/10/three-white-pekin-ducks-picture-id1092941758-1024x535.jpg" style = "width: 100%">
+          <div class = "caption">
+            Ducks
+          </div>
+        </div>
+        
+        <div class = "fade slides">
+          <img src = "https://1.bp.blogspot.com/-oiFs2xbrYos/Xxn8s-R5EFI/AAAAAAAAJgM/tI8BSTVJF6AUS3U25_R6efG6hl2YAzoRwCLcBGAsYHQ/s1600/IMG_1856crop.JPG" style = "width: 100%">
+          <div class = "caption">
+            Quails
+          </div>
+        </div>
+        <a class = "prev" onclick = "moveSlides(-1)">&#8249</a>
+        <a class = "next" onclick = "moveSlides(1)">&#8250</a>
+      </div>     
+      <br>
+      <div style = "text-align: center">
+        <span class = "bulletpt" onclick = "setSlide(0)"></span>
+        <span class = "bulletpt" onclick = "setSlide(1)"></span>
+        <span class = "bulletpt" onclick = "setSlide(2)"></span>
+        <span class = "bulletpt" onclick = "setSlide(3)"></span>
+      </div>
     <div class="food">
       <button type="button" class="food__button">Food</button>
         <div class="food__content">
@@ -238,7 +356,7 @@
         button.addEventListener('click', () => {
           button.classList.toggle('food__button--active');
         });
-      });
+      }); 
       document.querySelectorAll('.life__button').forEach(button => {
         button.addEventListener('click', () => {
           button.classList.toggle('life__button--active');
@@ -264,6 +382,33 @@
           button.classList.toggle('know__button--active');
         });
       });
+     let index = 0;
+     showSlides(index);
+        
+     function moveSlides(n){
+        showSlides(index += n);
+     }
+        
+     function setSlide(n){
+        showSlides(index = n);
+     }
+        
+     function showSlides(n){
+     let slides = document.getElementsByClassName("slides");
+     let bulletpts = document.getElementsByClassName("bulletpt");
+     if (n >= slides.length) {
+     index = 0;
+     }
+     if (n < 0) {
+       index = slides.length - 1;
+     }
+     for (let i = 0; i < slides.length; i++){
+       slides[i].style.display = "none";
+       bulletpts[i].className = bulletpts[i].className.replace(" current", "");
+     }
+     slides[index].style.display = "block";
+     bulletpts[index].className += " current";
+     }
     </script>
   </body>
 </html>
