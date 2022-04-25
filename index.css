@@ -8,10 +8,12 @@ h1{
   margin-left: 40px;
 }
 p{
- font-size: 20px; 
+  font-size: 20px;
+  font-family: Didot;
 }
 a{
   font-size: 25px;
+  font-family: Didot;
 }
 iframe{
   display: block;
